@@ -22,6 +22,9 @@ spec:
     helm:
       valueFiles:
         - values.yaml
+      values: |
+        podAnnotations:
+          asdfg: 123123
 
   destination:
     server: https://kubernetes.default.svc
