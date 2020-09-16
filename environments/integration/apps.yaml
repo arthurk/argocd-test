@@ -22,6 +22,8 @@ spec:
     helm:
       valueFiles:
         - values-integration.yaml
+      values:
+        replicas: 5
 
   destination:
     server: https://kubernetes.default.svc
