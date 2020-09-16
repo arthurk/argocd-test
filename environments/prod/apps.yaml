@@ -1,8 +1,9 @@
 ---
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-watcher
+  name: dummy-watcher-prod
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -15,16 +16,18 @@ spec:
     path: charts/dummy-watcher
     helm:
       valueFiles:
-        - values.yaml
+        - values-prod.yaml
 
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+
 ---
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-watcher-info
+  name: dummy-watcher-info-prod
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -37,16 +40,18 @@ spec:
     path: charts/dummy-watcher-info
     helm:
       valueFiles:
-        - values.yaml
+        - values-prod.yaml
 
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+
 ---
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-childchain
+  name: dummy-childchain-prod
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -59,7 +64,7 @@ spec:
     path: charts/dummy-childchain
     helm:
       valueFiles:
-        - values.yaml
+        - values-prod.yaml
 
   destination:
     server: https://kubernetes.default.svc
