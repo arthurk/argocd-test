@@ -22,7 +22,7 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: false
 ---
 ###############################
 # watcher
@@ -46,7 +46,7 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: false
 ---
 ###############################
 # watcher-info
@@ -70,4 +70,4 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: false
