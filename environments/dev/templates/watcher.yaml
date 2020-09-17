@@ -13,6 +13,11 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision }}
     path: charts/dummy-watcher
 
+    helm:
+      values:
+        image:
+          tag: "1.17.0"
+
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: argo-dev
