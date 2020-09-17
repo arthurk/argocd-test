@@ -22,3 +22,53 @@ spec:
     targetRevision: HEAD
   syncPolicy:
     automated: {}
+---
+###############################
+# integration
+##############################
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argo-integration
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: applications-integration
+  namespace: default
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-integration
+  project: default
+  source:
+    path: environments/integration
+    repoURL: https://github.com/arthurk/argocd-test.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+---
+###############################
+# prod
+##############################
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argo-prod
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: applications-prod
+  namespace: default
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-prod
+  project: default
+  source:
+    path: environments/prod
+    repoURL: https://github.com/arthurk/argocd-test.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
