@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-watcher-info
+  name: dummy-watcher-info-integration
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
