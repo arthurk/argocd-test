@@ -5,7 +5,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dummy-childchain-{{ .Values.env }}
-  namespace: default
+  namespace: argo-{{ .Values.env }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -15,9 +15,8 @@ spec:
   project: default
   source:
     path: charts/dummy-childchain
-    helm:
-      valueFiles:
-        - ../../environments/{{ .Values.env }}/values-childchain.yaml
+    # helm:
+    #   values: |
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
@@ -32,7 +31,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dummy-watcher-{{ .Values.env }}
-  namespace: default
+  namespace: argo-{{ .Values.env }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -42,9 +41,6 @@ spec:
   project: default
   source:
     path: charts/dummy-watcher
-    helm:
-      valueFiles:
-        - ../../environments/{{ .Values.env }}/values-watcher.yaml
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
@@ -59,7 +55,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dummy-watcher-info-{{ .Values.env }}
-  namespace: default
+  namespace: argo-{{ .Values.env }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -69,9 +65,6 @@ spec:
   project: default
   source:
     path: charts/dummy-watcher-info
-    helm:
-      valueFiles:
-        - ../../environments/{{ .Values.env }}/values-watcher-info.yaml
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
