@@ -1,0 +1,67 @@
+###############################
+# childchain
+##############################
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dummy-childchain-{{ .Values.env }}
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argo-{{ .Values.env }}
+  project: default
+  source:
+    path: charts/dummy-childchain
+    # helm:
+    #   values: |
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    automated: {}
+---
+###############################
+# watcher
+##############################
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dummy-watcher-{{ .Values.env }}
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argo-{{ .Values.env }}
+  project: default
+  source:
+    path: charts/dummy-watcher
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    automated: {}
+---
+###############################
+# watcher-info
+##############################
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dummy-watcher-info-{{ .Values.env }}
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argo-{{ .Values.env }}
+  project: default
+  source:
+    path: charts/dummy-watcher-info
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    automated: {}
