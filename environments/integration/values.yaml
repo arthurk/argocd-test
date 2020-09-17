@@ -3,4 +3,4 @@ spec:
     server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: 73e7357
+    targetRevision: "6784833"
