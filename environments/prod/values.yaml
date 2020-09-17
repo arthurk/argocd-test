@@ -7,6 +7,6 @@ spec:
     targetRevision: HEAD
 
 ### Applications
-env: dev
+env: prod
 plasma_contracts_sha: a69c763
 ethereum_network: rinkeby
