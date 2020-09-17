@@ -11,8 +11,6 @@ kind: Application
 metadata:
   name: applications-dev
   namespace: default
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
@@ -23,6 +21,4 @@ spec:
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: false
+    automated: {}
