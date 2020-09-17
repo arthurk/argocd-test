@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-watcher-info
+  name: dummy-childchain
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,8 +11,8 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: charts/dummy-watcher-info
+    path: charts/dummy-childchain
 
   destination:
     server: {{ .Values.spec.destination.server }}
-    namespace: argo-dev
+    namespace: argo-integration
