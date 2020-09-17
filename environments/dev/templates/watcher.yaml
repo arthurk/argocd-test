@@ -17,7 +17,7 @@ spec:
       # Values file as block file
       values: |
         image:
-          tag: "1.17.0"
+          tag: "1.18.0"
 
   destination:
     server: {{ .Values.spec.destination.server }}
