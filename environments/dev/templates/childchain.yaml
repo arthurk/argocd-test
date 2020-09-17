@@ -13,6 +13,12 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision }}
     path: charts/dummy-childchain
 
+    helm:
+      # Values file as block file
+      values: |
+        image:
+          tag: "1.17.0"
+
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: argo-dev
