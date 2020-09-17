@@ -4,7 +4,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: HEAD
+    targetRevision: 8510c15438d756ac8491416a7700aaf96c151726
 
 ### Applications
 env: integration
