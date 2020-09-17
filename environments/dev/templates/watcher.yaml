@@ -14,7 +14,8 @@ spec:
     path: charts/dummy-watcher
 
     helm:
-      values:
+      # Values file as block file
+      values: |
         image:
           tag: "1.17.0"
 
