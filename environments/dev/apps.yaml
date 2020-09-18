@@ -56,27 +56,3 @@ spec:
     automated:
       prune: true
       selfHeal: false
----
-###############################
-# watcher-info
-##############################
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: dummy-watcher-info-dev
-  namespace: default
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argo-dev
-  project: default
-  source:
-    path: charts/dummy-watcher-info
-    repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: false
