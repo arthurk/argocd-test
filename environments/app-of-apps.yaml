@@ -16,7 +16,9 @@ spec:
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: false
 ---
 ###############################
 # integration

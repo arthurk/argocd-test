@@ -29,7 +29,9 @@ spec:
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: false
 ---
 ###############################
 # watcher
@@ -51,7 +53,9 @@ spec:
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: false
 ---
 ###############################
 # watcher-info
@@ -73,4 +77,6 @@ spec:
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: false
