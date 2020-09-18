@@ -21,7 +21,11 @@ spec:
   source:
     path: charts/dummy-childchain
     # helm:
+    #   valueFiles:
+    #    - ../../environments/dev/childchain.yaml
+    #
     #   values: |
+    #     foo: bar
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: HEAD
   syncPolicy:
