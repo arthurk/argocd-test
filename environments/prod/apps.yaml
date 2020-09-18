@@ -1,24 +1,30 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argo-prod
+---
 ###############################
 # childchain
 ##############################
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-childchain-{{ .Values.env }}
+  name: dummy-childchain-prod
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: {{ .Values.spec.destination.server }}
-    namespace: argo-{{ .Values.env }}
+    server: https://kubernetes.default.svc
+    namespace: argo-prod
   project: default
   source:
     path: charts/dummy-childchain
     # helm:
     #   values: |
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: https://github.com/arthurk/argocd-test.git
+    targetRevision: 11d6034
   syncPolicy:
     automated: {}
 ---
@@ -28,19 +34,19 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-watcher-{{ .Values.env }}
+  name: dummy-watcher-prod
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: {{ .Values.spec.destination.server }}
-    namespace: argo-{{ .Values.env }}
+    server: https://kubernetes.default.svc
+    namespace: argo-prod
   project: default
   source:
     path: charts/dummy-watcher
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: https://github.com/arthurk/argocd-test.git
+    targetRevision: 11d6034
   syncPolicy:
     automated: {}
 ---
@@ -50,18 +56,18 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dummy-watcher-info-{{ .Values.env }}
+  name: dummy-watcher-info-prod
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: {{ .Values.spec.destination.server }}
-    namespace: argo-{{ .Values.env }}
+    server: https://kubernetes.default.svc
+    namespace: argo-prod
   project: default
   source:
     path: charts/dummy-watcher-info
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: https://github.com/arthurk/argocd-test.git
+    targetRevision: 11d6034
   syncPolicy:
     automated: {}
