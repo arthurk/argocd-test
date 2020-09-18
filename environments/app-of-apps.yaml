@@ -1,11 +1,6 @@
 ###############################
 # dev
 ##############################
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: argo-dev
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -26,11 +21,6 @@ spec:
 ###############################
 # integration
 ##############################
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: argo-integration
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -51,11 +41,6 @@ spec:
 ###############################
 # prod
 ##############################
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: argo-prod
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
