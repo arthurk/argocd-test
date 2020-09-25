@@ -24,7 +24,7 @@ spec:
     # helm:
     #   values: |
     repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: b307160
+    targetRevision: f94a77e
   syncPolicy:
     automated: {}
 ---
@@ -46,7 +46,7 @@ spec:
   source:
     path: charts/dummy-watcher
     repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: b307160
+    targetRevision: f94a77e
   syncPolicy:
     automated: {}
 ---
@@ -68,6 +68,6 @@ spec:
   source:
     path: charts/dummy-watcher-info
     repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: b307160
+    targetRevision: f94a77e
   syncPolicy:
     automated: {}
