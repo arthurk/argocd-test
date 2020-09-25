@@ -23,7 +23,7 @@ spec:
     path: charts/dummy-childchain
     # helm:
     #   values: |
-    repoURL: https://github.com/boolafish/dummy-childchain-chart
+    repoURL: https://github.com/boolafish/dummy-childchain-chart.git
     targetRevision: b348e59
   syncPolicy:
     automated: {}
