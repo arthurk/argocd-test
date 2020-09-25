@@ -23,8 +23,8 @@ spec:
     path: charts/dummy-childchain
     # helm:
     #   values: |
-    repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: 507f98b
+    repoURL: https://github.com/boolafish/dummy-childchain-chart
+    targetRevision: 2d926f2
   syncPolicy:
     automated: {}
 ---
