@@ -25,8 +25,9 @@ spec:
     #   values: |
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: f94a77e
-  syncPolicy:
-    automated: {}
+  # Disable auto sync
+  # syncPolicy:
+  #   automated: {}
 ---
 ###############################
 # watcher
