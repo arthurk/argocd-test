@@ -23,7 +23,7 @@ spec:
     # helm:
     #   values: |
     repoURL: https://github.com/boolafish/dummy-childchain-chart.git
-    targetRevision: 09a32a42f622e19087700ffbc53013e861b3e8d9
+    targetRevision: fc4ae7b33562e070661d68f38df3e2dcbd2c119e
     # Disable auto sync
     # syncPolicy:
     #   automated: {}
