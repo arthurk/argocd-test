@@ -14,7 +14,7 @@ spec:
   source:
     path: charts/dummy-watcher
     repoURL: https://github.com/boolafish/dummy-watcher-chart.git
-    targetRevision: 044d4a280a71ce84
+    targetRevision: 
   syncPolicy:
     automated:
       prune: true
