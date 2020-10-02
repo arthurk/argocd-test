@@ -13,6 +13,6 @@ spec:
     source:
     path: charts/dummy-watcher
     repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: f94a77e
+    targetRevision: 82ac3e4ce98b888442ae90c7344f4c7a8576c0d8
     syncPolicy:
     automated: {}
