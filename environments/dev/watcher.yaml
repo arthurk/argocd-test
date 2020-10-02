@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dummy-watcher-dev
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-dev
+  project: default
+  source:
+    path: charts/dummy-watcher
+    repoURL: https://github.com/boolafish/dummy-watcher-chart.git
+    targetRevision: 044d4a280a71ce84
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
