@@ -13,6 +13,6 @@ spec:
   source:
     path: charts/dummy-watcher
     repoURL: https://github.com/boolafish/dummy-watcher-chart.git
-    targetRevision: 044d4a280a71ce841b2634bd8dc4150b08b1cf83
+    targetRevision: 044d4a280a71ce84
   syncPolicy:
     automated: {}
