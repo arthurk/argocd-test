@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-    name: dummy-watcher-integration
-    namespace: default
-    finalizers:
+  name: dummy-watcher-integration
+  namespace: default
+  finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-    destination:
+  destination:
     server: https://kubernetes.default.svc
     namespace: argo-integration
-    project: default
-    source:
+  project: default
+  source:
     path: charts/dummy-watcher
     repoURL: https://github.com/arthurk/argocd-test.git
     targetRevision: 82ac3e4ce98b888442ae90c7344f4c7a8576c0d8
-    syncPolicy:
+  syncPolicy:
     automated: {}
