@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: charts/dummy-watcher
-    repoURL: https://github.com/arthurk/argocd-test.git
-    targetRevision: 82ac3e4ce98b888442ae90c7344f4c7a8576c0d8
+    repoURL: https://github.com/boolafish/dummy-watcher-chart.git
+    targetRevision: 044d4a280a71ce841b2634bd8dc4150b08b1cf83
   syncPolicy:
     automated: {}
